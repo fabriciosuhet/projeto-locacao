@@ -1,9 +1,10 @@
 <section>
   <form>
-    <input type="text" placeholder="Filtrar por cidade">
-    <button class="primary" type="button">Procurar</button>
+    <input type="text" placeholder="Filtrar por cidade" #filter>
+    <button class="primary" type="button"
+    (click)="filterResults(filter.value)">Procurar</button>
   </form>
 </section>
 <section class="results">
-  <app-housing-location *ngFor="let housingLocation of housingLocationList" [housingLocation]="housingLocation"></app-housing-location>
+  <app-housing-location *ngFor="let housingLocation of filteredLocationList" [housingLocation]="housingLocation"></app-housing-location>
 </section>
